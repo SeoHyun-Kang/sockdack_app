@@ -10,21 +10,24 @@
     <Button
         android:id="@+id/button1"
         android:layout_width="400dp"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="#ECD2D2"
-        android:gravity="start"
-        android:text="오늘의 책"
+        android:gravity="center"
+        android:text ="오늘의 책"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="30dp"
-        tools:ignore="RtlCompat" />
+        android:textColor="#3A3636"
+        android:textSize="25dp"
+        tools:ignore="RtlCompat"
+        android:drawableTop="@drawable/today_book"
+        android:paddingTop="100px" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="400dp"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="10dp"
         android:layout_alignParentEnd="true"
@@ -34,13 +37,16 @@
         android:text="추천리스트"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="30dp"
-        tools:ignore="RtlCompat" />
+        android:textColor="#3A3636"
+        android:textSize="25dp"
+        tools:ignore="RtlCompat"
+        android:drawableTop="@drawable/recommendation"
+        android:paddingTop="100px"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="180dp"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:layout_below="@id/button2"
         android:layout_margin="10dp"
         android:layout_toLeftOf ="@id/button4"
@@ -49,13 +55,16 @@
         android:text="최근읽은책"
         android:textAlignment="center"
         android:textStyle="bold"
-        android:textSize="30dp"
-        tools:ignore="RtlCompat" />
+        android:textColor="#3A3636"
+        android:textSize="25dp"
+        tools:ignore="RtlCompat"
+        android:drawableTop="@drawable/recently_read"
+        android:paddingTop="100px"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="190dp"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:layout_margin="10dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -65,8 +74,11 @@
         android:text="내 서재"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="30dp"
-        tools:ignore="RtlCompat" />
+        android:textColor="#3A3636"
+        android:textSize="25dp"
+        tools:ignore="RtlCompat"
+        android:drawableTop="@drawable/mylibrary"
+        android:paddingTop="100px"/>
 
 
 

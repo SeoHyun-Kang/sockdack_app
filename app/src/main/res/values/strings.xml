@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">sockdack_app</string>
+    <string name="app_name">속닥속닥</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

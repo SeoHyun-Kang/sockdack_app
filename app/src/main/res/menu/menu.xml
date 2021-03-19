@@ -8,7 +8,6 @@
         android:icon="@drawable/mypage" />
     <item
         android:id="@+id/home"
-
         android:enabled="true"
         android:title="home"
         android:icon="@drawable/home" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sockdack_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,15 +18,18 @@
         <activity
             android:name=".MyPage_R"
             android:label="@string/title_activity_my_page__r"
-            android:theme="@style/Theme.Sockdack_app.NoActionBar"></activity>
-        <activity android:name=".LogInActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity">
+            android:theme="@style/Theme.Sockdack_app.NoActionBar" />
+
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 

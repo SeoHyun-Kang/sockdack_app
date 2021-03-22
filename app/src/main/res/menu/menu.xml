@@ -12,8 +12,8 @@
         android:title="home"
         android:icon="@drawable/home" />
     <item
-        android:id="@+id/checklist"
+        android:id="@+id/booksearch"
         android:enabled="true"
-        android:title="checklist"
-        android:icon="@drawable/checklist" />
+        android:title="booksearch"
+        android:icon="@drawable/search" />
 </menu>

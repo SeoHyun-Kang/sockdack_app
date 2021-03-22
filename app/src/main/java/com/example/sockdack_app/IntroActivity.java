@@ -1,6 +1,8 @@
 package com.example.sockdack_app;
 
 import android.content.Intent;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +14,8 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        ActionBar actionBar = this.getSupportActionBar();
+        actionBar.hide();
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

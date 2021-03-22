@@ -79,6 +79,17 @@ public class MyPage extends Fragment {
                 NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_myLibrary);
             }
         });
+        view.findViewById(R.id.my2).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_memoryFragment);
+            }
+        });
+        view.findViewById(R.id.my3).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_recommendation2);
+            }
+        });
+
     }
     /*public void replaceFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();

@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text= "오늘의 책"/>
+        android:textSize="50dp"
+        android:text= "오늘의 책 추천하기 = 해미가 연동해야할 부분"/>
 
 </FrameLayout>

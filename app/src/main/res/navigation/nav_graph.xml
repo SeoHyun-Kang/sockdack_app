@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_mypage_to_recommendation2"
             app:destination="@id/recommendation2" />
+        <action
+            android:id="@+id/action_mypage_to_userInfoChange"
+            app:destination="@id/userInfoChange" />
     </fragment>
     <fragment
         android:id="@+id/booksearch"
@@ -62,4 +65,9 @@
         android:name="com.example.sockdack_app.Recommendation"
         android:label="fragment_recommendation"
         tools:layout="@layout/fragment_recommendation" />
+    <fragment
+        android:id="@+id/userInfoChange"
+        android:name="com.example.sockdack_app.UserInfoChange"
+        android:label="fragment_user_info_change"
+        tools:layout="@layout/fragment_user_info_change" />
 </navigation>

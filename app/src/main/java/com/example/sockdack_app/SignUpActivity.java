@@ -14,13 +14,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class SignUpActivity extends AppCompatActivity {
+import java.util.HashMap;
+import java.util.Map;
+
+public class SignUpActivity extends AppCompatActivity{
     private FirebaseAuth firebaseAuth;
+    FirebaseDatabase database;
+    DatabaseReference databaseReference;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editTextName;
     private Button buttonJoin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +36,8 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference();
 
         editTextEmail = (EditText) findViewById(R.id.editText_email);
         editTextPassword = (EditText) findViewById(R.id.editText_passWord);
@@ -35,11 +45,20 @@ public class SignUpActivity extends AppCompatActivity {
 
         buttonJoin = (Button) findViewById(R.id.btn_join);
         buttonJoin.setOnClickListener(new View.OnClickListener() {
+
+        String email = editTextEmail.getText().toString();
+        String password = editTextPassword.getText().toString();
+        String name = editTextName.getText().toString();
+
             @Override
             public void onClick(View v) {
                 if (!editTextEmail.getText().toString().equals("") && !editTextPassword.getText().toString().equals("")) {
                     // 이메일과 비밀번호가 공백이 아닌 경우
-                    createUser(editTextEmail.getText().toString(), editTextPassword.getText().toString(), editTextName.getText().toString());
+                    //createUser(email, password, name);
+                    createUser(editTextEmail.getText().toString(),editTextPassword.getText().toString(),editTextName.getText().toString());
+                    databaseReference.child("person").child(name).child("name").setValue(editTextEmail.getText().toString());
+                    databaseReference.child("person").child(email).child("email").setValue(editTextPassword.getText().toString());
+                    databaseReference.child("person").child(password).child("pw").setValue(editTextName.getText().toString());
                 } else {
                     // 이메일과 비밀번호가 공백인 경우
                     Toast.makeText(SignUpActivity.this, "계정과 비밀번호를 입력하세요.", Toast.LENGTH_LONG).show();
@@ -63,7 +82,23 @@ public class SignUpActivity extends AppCompatActivity {
                             // 계정이 중복된 경우
                             Toast.makeText(SignUpActivity.this, "이미 존재하는 계정입니다.", Toast.LENGTH_SHORT).show();
                         }
+
                     }
                 });
     }
+
+    /*public void postFirebaseDatabase(boolean add){
+        mPostReference = FirebaseDatabase.getInstance().getReference();
+        childUpdates = new HashMap<>();
+
+        if(add){
+            userInfo = new UserInfo(ID,PW,name);
+            userValue = userInfo.toMap();
+        }
+        childUpdates.put("/User_info/" + ID, userValue);
+        mPostReference.updateChildren(childUpdates);
+    }
+     */
+
+
 }

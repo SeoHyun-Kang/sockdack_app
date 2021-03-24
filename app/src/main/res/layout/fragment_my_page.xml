@@ -40,6 +40,7 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:gravity="center">
+
         <Button
             android:id="@+id/btnCamera"
             android:text="Camera"
@@ -58,9 +59,27 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnUserInfo"
+            android:text="User Info"
+            android:backgroundTint="#772828"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp">
 
         <Button
             android:id="@+id/my1"

@@ -72,8 +72,15 @@ public class MyPage extends Fragment {
         return inflater.inflate(R.layout.fragment_my_page, container, false);
     }
 
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
         super.onViewCreated(view,savedInstanceState);
+
+        view.findViewById(R.id.btnUserInfo).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_userInfoChange);
+            }
+        });
         view.findViewById(R.id.my1).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_myLibrary);

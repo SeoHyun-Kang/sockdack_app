@@ -66,8 +66,15 @@ public class Home extends Fragment {
     }
 
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
-        super.onViewCreated(view,savedInstanceState);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        ActionBar actionBar = ((MainActivity) getActivity()).getSupportActionBar();
+        actionBar.setTitle("속닥속닥");
+        actionBar.setDisplayHomeAsUpEnabled(false);
+
+
         view.findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 NavHostFragment.findNavController(Home.this).navigate(R.id.action_home_to_today_Book);
@@ -76,11 +83,6 @@ public class Home extends Fragment {
         view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 NavHostFragment.findNavController(Home.this).navigate(R.id.action_home_to_recommendation2);
-            }
-        });
-        view.findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                NavHostFragment.findNavController(Home.this).navigate(R.id.action_home_to_myLibrary);
             }
         });
     }

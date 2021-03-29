@@ -24,14 +24,17 @@ public class SignUpActivity extends AppCompatActivity{
     private FirebaseAuth firebaseAuth;
     FirebaseDatabase database;
     DatabaseReference databaseReference;
-    private EditText editTextEmail;
-    private EditText editTextPassword;
-    private EditText editTextName;
+    public EditText editTextEmail;
+    public EditText editTextPassword;
+    public EditText editTextName;
     private Button buttonJoin;
+    public String email;
+    public String password;
+    public String name;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
@@ -56,9 +59,9 @@ public class SignUpActivity extends AppCompatActivity{
                     // 이메일과 비밀번호가 공백이 아닌 경우
                     //createUser(email, password, name);
                     createUser(editTextEmail.getText().toString(),editTextPassword.getText().toString(),editTextName.getText().toString());
-                    databaseReference.child("person").child(name).child("name").setValue(editTextEmail.getText().toString());
-                    databaseReference.child("person").child(email).child("email").setValue(editTextPassword.getText().toString());
-                    databaseReference.child("person").child(password).child("pw").setValue(editTextName.getText().toString());
+                    databaseReference.child(name).child(name).child("name").setValue(editTextEmail.getText().toString());
+                    databaseReference.child(name).child(email).child("email").setValue(editTextPassword.getText().toString());
+                    databaseReference.child(name).child(password).child("pw").setValue(editTextName.getText().toString());
                 } else {
                     // 이메일과 비밀번호가 공백인 경우
                     Toast.makeText(SignUpActivity.this, "계정과 비밀번호를 입력하세요.", Toast.LENGTH_LONG).show();

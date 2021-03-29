@@ -9,6 +9,7 @@ public class ListItem {
     private Drawable bookcover;
     private String booktitle;
     private String bookauthor;
+    private String bookgenre;
 
     public Drawable getBookcover(){
         return this.bookcover;
@@ -33,9 +34,18 @@ public class ListItem {
         this.bookauthor = bookauthor;
     }
 
-    ListItem(String booktitle, String bookauthor, Drawable bookcover){
+    public String getBookgenre(){
+        return this.bookgenre;
+    }
+
+    public void setBookgenre(String bookcover){
+        this.bookgenre = bookgenre;
+    }
+
+    ListItem(String booktitle, String bookauthor, String bookgenre, Drawable bookcover){
         this.booktitle = booktitle;
         this.bookauthor = bookauthor;
         this.bookcover = bookcover;
+        this.bookgenre = bookgenre;
     }
 }

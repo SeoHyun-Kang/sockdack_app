@@ -14,18 +14,18 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListViewAdapter extends BaseAdapter {
-    ArrayList<ListItem> itemList = new ArrayList<ListItem>();
+public class MemoViewAdapter extends BaseAdapter {
+    ArrayList<MemoItem> memoList = new ArrayList<MemoItem>();
     Context context;
 
     @Override
     public int getCount() {
-        return itemList.size();
+        return memoList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return itemList.get(position);
+        return memoList.get(position);
     }
 
     @Override
@@ -37,30 +37,26 @@ public class ListViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         context = parent.getContext();
-        ListItem listItem = itemList.get(position);
+        MemoItem memoItem= memoList.get(position);
 
         //listview_item을 inflate에서 converiew를 참조
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.listview_item, parent, false);
+            convertView = inflater.inflate(R.layout.memoview_item, parent, false);
 
         }
 
         //화면에 보여질 데이터
-        ImageView imageIg = convertView.findViewById(R.id.bookcover);
-        TextView titleText = convertView.findViewById(R.id.booktitle);
-        TextView authorText = convertView.findViewById(R.id.bookauthor);
-        TextView genreText = convertView.findViewById(R.id.bookgenre);
+        TextView memoDateText = convertView.findViewById(R.id.memodate);
+        TextView memoText = convertView.findViewById(R.id.memo);
 
-        imageIg.setImageDrawable(listItem.getBookcover());
-        titleText.setText(listItem.getBooktitle());
-        authorText.setText(listItem.getBookauthor());
-        genreText.setText(listItem.getBookgenre());
+        memoDateText.setText(memoItem.getMemodate());
+        memoText.setText(memoItem.getMemo());
 
         return convertView;
     }
 
-    public void addItem(ListItem item) {
-        itemList.add(item);
+    public void addItem(MemoItem item) {
+        memoList.add(item);
     }
 }

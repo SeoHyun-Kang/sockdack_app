@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -45,13 +46,21 @@ public class MyLibrary extends Fragment {
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+        ActionBar actionBar = ((MainActivity) getActivity()).getSupportActionBar();
+        actionBar.setTitle("내 서재");
+        actionBar.setDisplayHomeAsUpEnabled(false);
+
         listView = view.findViewById(R.id.booklist);
 
         adapter = new ListViewAdapter();
-        adapter.addItem(new ListItem("여행 이야기", "강서현", getResources().getDrawable(R.drawable.book_icon)));
-        adapter.addItem(new ListItem("말센스", "김성환", getResources().getDrawable(R.drawable.book_icon)));
+        adapter.addItem(new ListItem("빌러비드", "토니 모리슨", "영미소설", getResources().getDrawable(R.drawable.book_icon)));
+        adapter.addItem(new ListItem("출근길의 주문", "이다혜", "자기개발",getResources().getDrawable(R.drawable.book_icon)));
 
         listView.setAdapter(adapter);
+
+
     }
 
 }

@@ -26,10 +26,11 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="217dp"
+            android:layout_height="250dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginTop="50dp"
+            android:layout_marginLeft="10dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/myimage"
             tools:ignore="VectorDrawableCompat" />
@@ -103,7 +104,7 @@
             android:layout_height="150dp"
             android:backgroundTint="#ECD2D2"
             android:drawableTop="@drawable/my2"
-            android:text="나의 기록"
+            android:text="오늘의 메모"
             android:textColor="#3A3636"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -119,7 +120,7 @@
             android:layout_height="150dp"
             android:backgroundTint="#ECD2D2"
             android:drawableTop="@drawable/my3"
-            android:text="추천리스트"
+            android:text="타이머"
             android:textColor="#3A3636"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

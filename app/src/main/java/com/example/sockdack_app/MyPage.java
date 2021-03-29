@@ -3,6 +3,7 @@ package com.example.sockdack_app;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -76,6 +77,11 @@ public class MyPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
         super.onViewCreated(view,savedInstanceState);
 
+        ActionBar actionBar = ((MainActivity) getActivity()).getSupportActionBar();
+        actionBar.setTitle("마이페이지");
+        actionBar.setDisplayHomeAsUpEnabled(false);
+
+
         view.findViewById(R.id.btnUserInfo).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_userInfoChange);
@@ -93,7 +99,7 @@ public class MyPage extends Fragment {
         });
         view.findViewById(R.id.my3).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_recommendation2);
+                NavHostFragment.findNavController(MyPage.this).navigate(R.id.action_mypage_to_alarm);
             }
         });
 

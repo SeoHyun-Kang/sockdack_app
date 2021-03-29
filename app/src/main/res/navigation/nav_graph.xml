@@ -9,7 +9,7 @@
         android:id="@+id/home"
         android:name="com.example.sockdack_app.Home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_home_to_today_Book"
             app:destination="@id/today_Book" />
@@ -24,7 +24,7 @@
         android:id="@+id/mypage"
         android:name="com.example.sockdack_app.MyPage"
         android:label="fragment_my_page"
-        tools:layout="@layout/fragment_my_page" >
+        tools:layout="@layout/fragment_my_page">
         <action
             android:id="@+id/action_mypage_to_myLibrary"
             app:destination="@id/myLibrary"
@@ -34,11 +34,11 @@
             android:id="@+id/action_mypage_to_memoryFragment"
             app:destination="@id/memoryFragment" />
         <action
-            android:id="@+id/action_mypage_to_recommendation2"
-            app:destination="@id/recommendation2" />
-        <action
             android:id="@+id/action_mypage_to_userInfoChange"
             app:destination="@id/userInfoChange" />
+        <action
+            android:id="@+id/action_mypage_to_alarm"
+            app:destination="@id/alarm" />
     </fragment>
     <fragment
         android:id="@+id/booksearch"
@@ -59,7 +59,11 @@
         android:id="@+id/memoryFragment"
         android:name="com.example.sockdack_app.MemoryFragment"
         android:label="fragment_memory"
-        tools:layout="@layout/fragment_memory" />
+        tools:layout="@layout/fragment_memory" >
+        <action
+            android:id="@+id/action_memoryFragment_to_memoList"
+            app:destination="@id/memoList" />
+    </fragment>
     <fragment
         android:id="@+id/recommendation2"
         android:name="com.example.sockdack_app.Recommendation"
@@ -70,4 +74,34 @@
         android:name="com.example.sockdack_app.UserInfoChange"
         android:label="fragment_user_info_change"
         tools:layout="@layout/fragment_user_info_change" />
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.sockdack_app.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.sockdack_app.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoList"
+        android:name="com.example.sockdack_app.MemoList"
+        android:label="fragment_memo_list"
+        tools:layout="@layout/fragment_memo_list" />
+    <fragment
+        android:id="@+id/alarm"
+        android:name="com.example.sockdack_app.Alarm"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
 </navigation>

@@ -15,22 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sockdack_app">
-        <activity
-            android:name=".MyPage_R"
-            android:label="@string/title_activity_my_page__r"
-            android:theme="@style/Theme.Sockdack_app.NoActionBar" />
-
         <activity android:name=".IntroActivity">
+
+        </activity>
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".LogInActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 

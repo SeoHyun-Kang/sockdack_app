@@ -5,46 +5,52 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ListView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class MemoryFragment extends Fragment {
+public class MemoList extends Fragment {
 
+    ListView listView;
+    MemoViewAdapter adapter;
+
+    long now = System.currentTimeMillis();
+
+    Date mDate = new Date(now);
+
+    SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy.MM.dd");
+    String getTime = simpleDate.format(mDate);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_memory, container, false);
-    }
+        return inflater.inflate(R.layout.fragment_memo_list, container, false);
 
+    }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         ActionBar actionBar = ((MainActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle("오늘의 메모장");
+        actionBar.setTitle("메모 리스트");
         actionBar.setDisplayHomeAsUpEnabled(false);
+        listView = view.findViewById(R.id.memolist);
 
-        view.findViewById(R.id.memolist_btn).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MemoryFragment.this).navigate(R.id.action_memoryFragment_to_memoList);
-            }
-        });
-        view.findViewById(R.id.save_btn).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), "오늘의 메모가 저장되었습니다.", Toast.LENGTH_LONG).show();
-            }
-        });
+        adapter = new MemoViewAdapter();
+        adapter.addItem(new MemoItem( getTime , "Don't give up!"));
 
+        listView.setAdapter(adapter);
     }
+
 }
